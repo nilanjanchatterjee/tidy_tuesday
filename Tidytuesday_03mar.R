@@ -20,10 +20,6 @@ goal_plyr <- game_goals %>%
   summarise(tot_goal=sum(goals, na.rm=T), tot_asst=sum(assists, na.rm=T))
 head(goal_plyr)
 
-barplot(goal_plyr$tot_goal)
-plot(goal_plyr$tot_goal, goal_plyr$tot_asst)
-
-unique(game_goals$season)
 goal_yr <- game_goals %>% 
   group_by(season) %>%
   summarise(tot_goal=sum(goals, na.rm=T), tot_sht=sum(shots, na.rm=T))
